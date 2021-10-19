@@ -1,0 +1,12 @@
+<div class="container-md h-75">
+    <div class="row-cols-1 h-100">
+        <app-stepper #cdkStepper [linear]="true">
+            <cdk-step [stepControl]="userCreate.formGroup" [optional]="false">
+                <app-user-create-form #userCreate></app-user-create-form>
+            </cdk-step>
+            <cdk-step [stepControl]="userAdd.formGroup" [optional]="false">
+                <app-user-add-data-form #userAdd></app-user-add-data-form>
+            </cdk-step>
+        </app-stepper>
+    </div>
+</div>

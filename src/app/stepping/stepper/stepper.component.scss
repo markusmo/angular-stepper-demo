@@ -1,0 +1,56 @@
+:host {
+  display: block;
+  overflow: hidden; /* Hide everything that doesn't fit the component */
+  padding-top: 10px;
+}
+
+.stepper{
+  background-color: #f8f9fa;
+  .stepper-header{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    .steps-as-circle-text{
+      font-weight: bold;
+      font-size: large;
+      margin-right: 0.5rem;
+    }
+    .steps-as-circle{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #002454;
+      height: 3rem;
+      width: 3rem;
+      border-radius: 50%;
+      color: #f8f9fa;
+      font-weight: bold;
+      .slash{
+        font-size: 20px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.step-next-buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stepper-body {
+  margin: 25px auto;
+  padding: 1rem;
+  .content {
+    &:not(.active) {
+      height: 0;
+      overflow: hidden;
+    }
+  }
+}
+
+.step:first-child:after {
+  content: none;
+}
+

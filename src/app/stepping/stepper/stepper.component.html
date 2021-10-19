@@ -1,0 +1,24 @@
+<div class="stepper">
+    <div class="stepper-header" *ngIf="steps">
+        <div class="steps-as-circle-text">Steps</div>
+        <div class="steps-as-circle">
+            <span>{{stepsToGo}}</span>
+            <span class="slash">/</span>
+            <span>{{steps.length}}</span>
+        </div>
+    </div>
+    <div class="stepper-body">
+        <div class="content"
+             *ngFor="let step of _steps; let i = index"
+             [class.active]="selectedIndex === i"
+             [@stepTransition]="_getAnimationDirection(i)"
+             (@stepTransition.done)="animations.next($event)"
+        >
+            <ng-container [ngTemplateOutlet]="step.content"></ng-container>
+        </div>
+    </div>
+    <div class="step-next-buttons">
+        <button class="prev-button btn-primary rounded" cdkStepperPrevious>Previous step</button>
+        <button class="next-button btn-primary rounded" cdkStepperNext>Next step</button>
+    </div>
+</div>
